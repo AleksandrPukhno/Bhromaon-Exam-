@@ -1,0 +1,36 @@
+%btn-view {
+  width: 215px;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5474fd;
+  color: white;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+%btn-search {
+  fill: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: absolute;
+  right: 5px;
+  top: 4px;
+  bottom: 4px;
+
+  padding: 0 35px;
+  border: none;
+  background: #5474fd;
+  color: white;
+  font-family: "Aleo";
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: 0.3s;
+}

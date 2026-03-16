@@ -1,0 +1,469 @@
+@use "normalize";
+@use "fonts";
+@use "extends";
+@use "keyframes";
+@use "mixins" as m;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+  font-family: "Aleo";
+  scroll-behavior: smooth;
+}
+
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1320px;
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header {
+  position: relative;
+  background: url("../assets/img/bg_1.webp") center / cover no-repeat;
+}
+
+.hero {
+  @include m.flex-center;
+  flex-direction: column;
+  padding-top: 290px;
+
+  &__title {
+    font-family: "Josefin Sans Bold";
+    font-size: 3rem;
+    padding-bottom: 8px;
+    color: white;
+  }
+
+  &__subtitle {
+    color: white;
+    font-family: "Josefin Sans";
+    font-size: 1.37rem;
+    line-height: 28px;
+    letter-spacing: 0.31em;
+    padding-bottom: 48px;
+  }
+
+  &__search {
+    position: relative;
+    width: 100%;
+    max-width: 647px;
+    margin: 0 auto;
+
+    &-input {
+      font-family: "Josefin Sans";
+      width: 100%;
+      height: 60px;
+      padding: 0 170px 0 36px;
+      font-size: 1rem;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+
+      &::placeholder {
+        font-family: "Josefin Sans";
+        font-size: 14px;
+        color: #999999;
+        letter-spacing: 0.2em;
+      }
+    }
+
+    &-btn {
+      @extend %btn-search;
+
+      &:hover {
+        background: #3f5ae0;
+      }
+    }
+  }
+
+  &__scroll {
+    fill: white;
+
+    &-icon {
+      transition: transform 0.3s ease-in-out;
+      will-change: transform;
+    }
+
+    &-link {
+      @include m.flex-column;
+      text-decoration: none;
+      color: white;
+      font-family: "Josefin Sans";
+      letter-spacing: 0.2em;
+      line-height: 20px;
+      margin-top: 200px;
+      margin-bottom: 120px;
+
+      &:hover {
+        .hero__scroll-icon {
+          animation: arrowBounce 1s ease-in-out infinite;
+        }
+      }
+    }
+  }
+}
+
+.nav__checker,
+.nav__burger {
+  display: none;
+}
+
+.nav__checker:checked ~ .nav__menu {
+  transform: translateX(0);
+}
+
+.nav__checker:checked ~ .nav__burger {
+  span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  span:nth-child(2) {
+    opacity: 0;
+  }
+  span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #5474fd;
+  height: 84px;
+  width: 100%;
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+
+  &__menu {
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+
+    &-link {
+      text-decoration: none;
+      color: white;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        transform: translateX(-50%);
+        height: 1px;
+        width: 0;
+        background-color: #ffffff;
+        transition: all 0.4s;
+
+        opacity: 0;
+      }
+
+      &:hover {
+        &::after {
+          opacity: 1;
+          width: 75%;
+          left: 50%;
+        }
+      }
+    }
+  }
+}
+
+.section {
+  &__1 {
+    background: url("../assets/img/bg_2.webp") center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__2 {
+    background: url("../assets/img/bg_3.webp") center / cover no-repeat;
+    min-height: 684px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__3 {
+    background: url("../assets/img/bg_4.webp") center / cover no-repeat;
+    min-height: 684px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__4 {
+    background: url("../assets/img/bg_5.webp") center / cover no-repeat;
+    height: auto;
+  }
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 135px;
+  padding: 124px 0;
+
+  &__content {
+    width: 648px;
+    height: 324px;
+  }
+
+  &__title {
+    font-size: 2.25rem;
+    line-height: 40px;
+    padding-bottom: 25px;
+    color: white;
+  }
+
+  &__text {
+    color: white;
+    font-family: "Josefin Sans Light";
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    padding-bottom: 30px;
+  }
+
+  &__button {
+    @extend %btn-view;
+
+    &:hover {
+      background: #3f5ae0;
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    width: 425px;
+    height: 456px;
+
+    & .about__gallery-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    & .about__gallery-bottom {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  width: 100%;
+  height: 306px;
+  background-color: #33333390;
+
+  &__line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    width: 100%;
+    height: 250px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__lable {
+    color: white;
+    font-size: 36px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__dark {
+    padding: 0 33px;
+    background-color: #232323e1;
+    border-radius: 5px;
+    width: 648px;
+    height: 344px;
+
+    &-right {
+      margin-left: auto;
+    }
+  }
+
+  &__location {
+    font-family: "Josefin Sans";
+    color: white;
+    font-size: 1.25rem;
+    line-height: 28px;
+    padding-bottom: 16px;
+  }
+
+  &__title {
+    font-family: "Josefin Sans Light";
+    font-size: 1.25rem;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    color: white;
+    padding-bottom: 16px;
+  }
+
+  &__text {
+    color: white;
+    font-family: "Josefin Sans Light";
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    padding-bottom: 25px;
+  }
+
+  &__button {
+    @extend %btn-view;
+
+    &:hover {
+      background: #3f5ae0;
+    }
+  }
+}
+
+.section__title {
+  font-size: 2.25rem;
+  line-height: 40px;
+  padding-bottom: 60px;
+  padding-top: 124px;
+  color: white;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 124px;
+}
+
+.review {
+  display: flex;
+  align-items: center;
+  background-color: #333333;
+
+  &__title {
+    font-family: "Josefin Sans";
+    font-size: 1.25rem;
+    line-height: 28px;
+    padding-bottom: 10px;
+    color: white;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__text {
+    color: white;
+    font-family: "Josefin Sans Light";
+    line-height: 28px;
+  }
+}
+
+.footer {
+  background-color: #000;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+
+  &__title {
+    font-family: "Josefin Sans Bold";
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    line-height: 28px;
+    padding-bottom: 20px;
+  }
+
+  &__text {
+    font-family: "Josefin Sans";
+    color: #fff;
+    letter-spacing: 0.2em;
+    line-height: 20px;
+    padding-bottom: 30px;
+  }
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+
+  &__item {
+    padding-bottom: 80px;
+  }
+
+  &__icon {
+    fill: #fff;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover .social__icon {
+      fill: #5474fd;
+    }
+  }
+}
+
+@import "media";
