@@ -731,7 +731,7 @@ img {
 }
 
 .footer {
-  background-color: #000;
+  background-color: #3f5ae0;
 }
 
 .contacts {
@@ -773,7 +773,7 @@ img {
   align-items: center;
 }
 .social__link:hover .social__icon {
-  fill: #5474fd;
+  fill: #89e246;
 }
 
 @media screen and (max-width: 1360px) {
@@ -813,11 +813,11 @@ img {
   .about__gallery {
     width: 386px;
   }
-  .card__dark {
-    width: 520px;
-  }
   .steps__lable {
     font-size: 30px;
+  }
+  .card__dark {
+    width: 520px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -950,7 +950,7 @@ img {
   .hero__search-btn {
     padding: 0 20px;
   }
-  .hero__scroll-link {
+  .hero__search-link {
     margin-top: 100px;
     margin-bottom: 80px;
     font-size: 0.75rem;
@@ -958,11 +958,11 @@ img {
   .nav-wrapper {
     height: 84px;
   }
-  .nav__logo {
-    margin-bottom: 0;
-  }
   .nav {
     position: relative;
+  }
+  .nav__logo {
+    margin-bottom: 0;
   }
   .nav__menu {
     position: absolute;
@@ -1001,13 +1001,13 @@ img {
     background-color: #fff;
     transition: 0.3s;
   }
-  .about__title {
-    text-align: center;
-  }
   .about {
     flex-direction: column-reverse;
     gap: 20px;
     padding: 30px 0;
+  }
+  .about__title {
+    text-align: center;
   }
   .about__content {
     width: 100%;
@@ -1017,8 +1017,7 @@ img {
   .about__gallery {
     gap: 10px;
   }
-  .about__gallery-top,
-  .about__gallery-bottom {
+  .about__gallery-top, .about__gallery-bottom {
     width: calc(50% - 5px);
     height: 162px;
     object-fit: cover;
@@ -1029,20 +1028,99 @@ img {
   .steps__lable {
     font-size: 20px;
   }
-  .card__dark {
-    width: 540px;
-  }
   .section__title {
     font-size: 1.8rem;
     text-align: center;
   }
   .card__dark {
     width: 100%;
+    height: auto;
+    padding: 20px 15px;
   }
   .review__title {
     text-align: left;
   }
   .contacts__title {
     font-size: 20px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .container {
+    padding: 0 10px;
+  }
+  .hero {
+    padding-top: 120px;
+  }
+  .hero__title {
+    font-size: 1.5rem;
+  }
+  .hero__search {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: transparent;
+  }
+  .hero__search-input {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+  }
+  .hero__search-input::placeholder {
+    font-size: 12px;
+  }
+  .hero__search-btn {
+    padding: 0 15px;
+    font-size: 12px;
+    position: static;
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    justify-content: center;
+    transform: none;
+  }
+  .about {
+    padding: 30px 0;
+  }
+  .about__gallery {
+    gap: 8px;
+  }
+  .about__gallery-top, .about__gallery-bottom {
+    height: 140px;
+  }
+  .section {
+    height: auto !important;
+    min-height: 450px;
+    padding: 40px 0;
+  }
+  .card__dark {
+    width: 100%;
+    height: auto;
+    padding: 20px 15px;
+  }
+  .card__dark__title {
+    font-size: 1rem;
+  }
+  .card__dark__text {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .steps {
+    height: auto;
+    padding: 40px 0;
+  }
+  .steps__list {
+    gap: 40px;
+  }
+  .steps__lable {
+    font-size: 18px;
+  }
+  .review__content {
+    padding: 20px;
+  }
+  .review__text {
+    font-size: 13px;
   }
 }/*# sourceMappingURL=main.css.map */

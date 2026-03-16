@@ -208,17 +208,13 @@ img {
   &__2 {
     background: url("../assets/img/bg_3.webp") center / cover no-repeat;
     min-height: 684px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include m.flex-column-center;
   }
 
   &__3 {
     background: url("../assets/img/bg_4.webp") center / cover no-repeat;
     min-height: 684px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include m.flex-column-center;
   }
 
   &__4 {
@@ -308,9 +304,7 @@ img {
   }
 
   &__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include m.flex-column;
     gap: 20px;
   }
 
@@ -380,9 +374,7 @@ img {
 }
 
 .flex-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include m.flex-column;
   padding-bottom: 124px;
 }
 
@@ -415,7 +407,7 @@ img {
 }
 
 .footer {
-  background-color: #000;
+  background-color: #3f5ae0;
 }
 
 .contacts {
@@ -461,7 +453,7 @@ img {
     align-items: center;
 
     &:hover .social__icon {
-      fill: #5474fd;
+      fill: #89e246;
     }
   }
 }
