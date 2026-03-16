@@ -204,14 +204,32 @@
 
     &__search {
       max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background: transparent;
 
       &-input {
-        height: 52px;
-        padding: 0 130px 0 20px;
-        font-size: 0.9rem;
+        width: 100%;
+        height: 50px;
+        padding: 0 15px;
+        border-radius: 5px;
+        font-size: 12px;
+        text-align: center;
+
+        &::placeholder {
+          font-size: 12px;
+        }
       }
       &-btn {
-        padding: 0 20px;
+        padding: 0 15px;
+        font-size: 12px;
+        position: static;
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        justify-content: center;
+        transform: none;
       }
 
       &-link {
