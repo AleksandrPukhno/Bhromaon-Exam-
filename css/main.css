@@ -410,7 +410,6 @@ img {
 }
 
 .header {
-  position: relative;
   background: url("../assets/img/bg_1.webp") center/cover no-repeat;
 }
 
@@ -773,7 +772,7 @@ img {
   align-items: center;
 }
 .social__link:hover .social__icon {
-  fill: #89e246;
+  fill: #FF6363;
 }
 
 @media screen and (max-width: 1360px) {
@@ -1106,11 +1105,6 @@ img {
   }
   .about__gallery-top, .about__gallery-bottom {
     height: 140px;
-  }
-  .section {
-    height: auto !important;
-    min-height: 450px;
-    padding: 40px 0;
   }
   .card__dark {
     width: 100%;
